@@ -3,11 +3,11 @@ import re
 import requests
 import json
 from requests_aws4auth import AWS4Auth
-region='us-east-1'
-service = 'es'
+region='<region>'
+service = '<service>'
 credentials = boto3.Session().get_credentials()
 awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
-host = 'https://search-es-test-domain-jednpfqpvx5t4lxn3xz6pkqtfa.us-east-1.es.amazonaws.com' # the Amazon ES domain, including https://
+host = '' # the Amazon ES domain, including https://
 index = 'lambda-s3-index'
 type = 'lambda-type'
 url = host + '/' + index + '/' + type
