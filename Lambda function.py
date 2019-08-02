@@ -24,5 +24,5 @@ def handler(event, context):
         name = domain+ "-" + str(random.randint(x, y)) + ".json"
         title =domain+'/'+name
         s3 = boto3.resource('s3', aws_access_key_id='', aws_secret_access_key='')
-        s3.Object('crewler-data', title).put(Key=title,Body=json.dumps(container,indent=4))
+        s3.Object('Bucket_name', title).put(Key=title,Body=json.dumps(container,indent=4))
 
